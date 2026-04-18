@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-geist: "Geist", sans-serif;
+}
+
+:root {
+  font-family: var(--font-geist);
+  line-height: normal;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-width: 0;
+  }
+}
