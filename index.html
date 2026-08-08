@@ -1,12 +1,411 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SkwizUI</title>
-  </head>
-  <body>
-    <div id="root"></div>
- <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!-- google-site-verification: google4d2284a3847e5302.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Амир Мамедгасанов | Amir Mamedgasanov — MMA Fighter, Bull Fight Club</title>
+<meta name="description" content="Амир Мамедгасанов (Amir Mamedgasanov) — юный боец MMA, воспитанник Bull Fight Club MMA (Разино). Рекорд: 2 победы, 0 поражений. Возраст 12 лет, вес 34 кг.">
+<meta name="keywords" content="Amir Mamedgasanov, Amir Mamedgasanov MMA fighter, Амир Мамедгасанов, Амир Мамедгасанов MMA, Bull Fight Club MMA, Bull Fight Club Razino, Разино MMA, юный боец MMA, детский MMA боец">
+<meta name="author" content="Amir Mamedgasanov">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Амир Мамедгасанов | Amir Mamedgasanov — MMA Fighter">
+<meta property="og:description" content="Профиль бойца MMA Амира Мамедгасанова (Bull Fight Club, Разино). Рекорд: 2-0.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="az_AZ">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Amir Mamedgasanov — MMA Fighter">
+<meta name="twitter:description" content="Bull Fight Club MMA, Razino. Record: 2-0.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Amir Mamedgasanov",
+  "alternateName": "Амир Мамедгасанов",
+  "jobTitle": "MMA Fighter",
+  "affiliation": {
+    "@type": "SportsOrganization",
+    "name": "Bull Fight Club MMA",
+    "location": "Razino"
+  },
+  "birthDate": "2013-10-12",
+  "description": "MMA fighter, member of Bull Fight Club MMA (Razino). Current record: 2 wins, 0 losses."
+}
+</script>
+
+<meta name="google-site-verification" content="google4d2284a3847e5302.html" />
+<meta name="google-site-verification" content="764H-o1J75Z3FbjnsLGN7IPjf2_YpmcLgLt00wz5trY" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F0D0C;
+    --ink-2:#171310;
+    --crimson:#C4272B;
+    --crimson-dim:#7A1A1D;
+    --bone:#F1EADF;
+    --bone-dim:#B8AFA1;
+    --gold:#C89B3C;
+    --line: rgba(241,234,223,0.14);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'Barlow', sans-serif;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* textured canvas backdrop */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(241,234,223,0.025) 0px, rgba(241,234,223,0.025) 1px, transparent 1px, transparent 90px),
+      repeating-linear-gradient(25deg, rgba(241,234,223,0.02) 0px, rgba(241,234,223,0.02) 1px, transparent 1px, transparent 90px);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .wrap{ position:relative; z-index:1; max-width:1080px; margin:0 auto; padding:0 28px; }
+
+  /* ===== TOP BAR ===== */
+  .topbar{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+    font-size:14px; color:var(--bone-dim);
+  }
+  .brand span{ color:var(--crimson); }
+  .division{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:13px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--bone-dim);
+    text-align:right;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    padding:64px 0 40px;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:14px; letter-spacing:0.28em; text-transform:uppercase;
+    color:var(--crimson);
+    display:flex; align-items:center; gap:12px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:""; width:34px; height:2px; background:var(--crimson);
+  }
+
+  .fighter-name{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    text-transform:uppercase;
+    font-size:clamp(48px, 10vw, 108px);
+    line-height:0.92;
+    letter-spacing:0.01em;
+    color:var(--bone);
+  }
+  .fighter-name .accent{ color:var(--crimson); }
+
+  .hero-sub{
+    display:flex; flex-wrap:wrap; gap:10px 28px;
+    margin-top:22px;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:19px; letter-spacing:0.03em;
+    color:var(--bone-dim);
+  }
+  .hero-sub b{ color:var(--bone); font-weight:600; }
+  .hero-sub .sep{ color:var(--crimson-dim); }
+
+  /* ===== RECORD SCOREBOARD (signature element) ===== */
+  .scoreboard{
+    margin-top:52px;
+    border:1px solid var(--line);
+    background:linear-gradient(180deg, var(--ink-2), var(--ink));
+    position:relative;
+    overflow:hidden;
+  }
+  .scoreboard::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0; width:6px;
+    background:var(--crimson);
+  }
+  .scoreboard-inner{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center;
+    padding:38px 40px;
+    gap:20px;
+  }
+  .record-label{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:13px; letter-spacing:0.24em; text-transform:uppercase;
+    color:var(--bone-dim);
+    margin-bottom:10px;
+  }
+  .record-block{ text-align:left; }
+  .record-block.losses{ text-align:right; }
+  .record-num{
+    font-family:'Anton', sans-serif;
+    font-size:clamp(56px, 9vw, 96px);
+    line-height:1;
+    color:var(--bone);
+    font-variant-numeric: tabular-nums;
+  }
+  .record-block.wins .record-num{ color:var(--gold); }
+  .record-block.losses .record-num{ color:var(--bone-dim); }
+
+  .record-tag{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:14px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--bone-dim);
+    margin-top:6px;
+  }
+
+  .record-divider{
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+  }
+  .record-divider .dash{
+    font-family:'Anton', sans-serif;
+    font-size:clamp(40px,6vw,64px);
+    color:var(--crimson-dim);
+  }
+  .streak{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--crimson);
+    white-space:nowrap;
+  }
+
+  .win-marks{
+    display:flex; gap:8px; padding:0 40px 30px;
+    border-top:1px solid var(--line);
+    padding-top:22px;
+  }
+  .mark{
+    width:34px; height:34px;
+    border:2px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700; font-size:15px;
+    color:var(--gold);
+    transform: scale(0);
+    animation: pop 0.45s cubic-bezier(.2,1.4,.4,1) forwards;
+  }
+  .mark.pending{
+    border-color:var(--line);
+    color:var(--bone-dim);
+    opacity:0.5;
+  }
+  .mark:nth-child(1){ animation-delay:0.15s; }
+  .mark:nth-child(2){ animation-delay:0.3s; }
+  .mark:nth-child(3){ animation-delay:0.45s; }
+  @keyframes pop{ to{ transform:scale(1); } }
+
+  /* ===== TALE OF THE TAPE ===== */
+  .tape{
+    margin-top:64px;
+  }
+  .section-title{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:14px; letter-spacing:0.24em; text-transform:uppercase;
+    color:var(--bone-dim);
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:0;
+    display:flex; justify-content:space-between;
+  }
+  .section-title span{ color:var(--crimson); }
+
+  .stat-row{
+    display:grid;
+    grid-template-columns: 1fr 1.4fr;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+    align-items:baseline;
+  }
+  .stat-row:hover{ background:rgba(196,39,43,0.04); }
+  .stat-key{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:15px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--bone-dim);
+  }
+  .stat-val{
+    font-family:'Barlow', sans-serif;
+    font-size:22px; font-weight:600;
+    color:var(--bone);
+  }
+  .stat-val small{
+    display:block;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:14px; font-weight:400; letter-spacing:0.05em;
+    color:var(--bone-dim);
+    margin-top:3px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    margin-top:64px;
+    padding:30px 0 50px;
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:14px;
+  }
+  .foot-line{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:13px; letter-spacing:0.1em;
+    color:var(--bone-dim);
+  }
+  .foot-line b{ color:var(--crimson); }
+
+  @media (max-width:640px){
+    .scoreboard-inner{ grid-template-columns:1fr auto 1fr; padding:26px 18px; gap:10px; }
+    .stat-row{ grid-template-columns:1fr; gap:6px; }
+    .win-marks{ padding:0 18px 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .mark{ animation:none; transform:scale(1); }
+  }
+
+  /* ===== LANG SWITCH ===== */
+  .topbar-right{
+    display:flex; align-items:center; gap:18px;
+  }
+  .lang-switch{
+    display:flex; border:1px solid var(--line);
+    font-family:'Barlow Condensed', sans-serif;
+  }
+  .lang-btn{
+    background:transparent; border:none; cursor:pointer;
+    color:var(--bone-dim);
+    font-family:inherit;
+    font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
+    padding:8px 14px;
+    transition:background 0.2s, color 0.2s;
+  }
+  .lang-btn:not(:last-child){ border-right:1px solid var(--line); }
+  .lang-btn.active{ background:var(--crimson); color:var(--bone); }
+  .lang-btn:hover:not(.active){ color:var(--bone); }
+
+  @media (max-width:640px){
+    .topbar{ flex-wrap:wrap; gap:14px; }
+    .topbar-right{ order:3; width:100%; justify-content:space-between; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">Bull Fight Club <span>MMA</span></div>
+    <div class="topbar-right">
+      <div class="division" data-ru="Юношеский дивизион · Разино" data-az="Gənclər divizionu · Razino">Юношеский дивизион · Разино</div>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">Ру</button>
+        <button class="lang-btn" data-lang="az">Azər</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow" data-ru="Карточка бойца" data-az="Döyüşçü kartı">Карточка бойца</div>
+    <h1 class="fighter-name"><span data-ru="Амир<br>Мамедгасанов" data-az="Əmir<br>Məmmədhəsənov">Амир<br>Мамедгасанов</span><span class="accent">.</span></h1>
+    <div class="hero-sub">
+      <span data-ru="<b>12 лет</b>" data-az="<b>12 yaş</b>"><b>12 лет</b></span>
+      <span class="sep">/</span>
+      <span data-ru="<b>34 кг</b>" data-az="<b>34 kq</b>"><b>34 кг</b></span>
+      <span class="sep">/</span>
+      <span data-ru="род. <b>12 октября 2013</b>" data-az="d.t. <b>12 oktyabr 2013</b>">род. <b>12 октября 2013</b></span>
+      <span class="sep">/</span>
+      <span data-ru="клуб <b>Bull Fight Club MMA</b>, Разино" data-az="klub <b>Bull Fight Club MMA</b>, Razino">клуб <b>Bull Fight Club MMA</b>, Разино</span>
+    </div>
+
+    <div class="scoreboard">
+      <div class="scoreboard-inner">
+        <div class="record-block wins">
+          <div class="record-label" data-ru="Победы" data-az="Qələbələr">Победы</div>
+          <div class="record-num">2</div>
+          <div class="record-tag" data-ru="Win" data-az="Qələbə">Win</div>
+        </div>
+        <div class="record-divider">
+          <div class="dash">—</div>
+          <div class="streak" data-ru="2 победы подряд" data-az="2 ardıcıl qələbə">2 победы подряд</div>
+        </div>
+        <div class="record-block losses">
+          <div class="record-label" data-ru="Поражения" data-az="Məğlubiyyətlər">Поражения</div>
+          <div class="record-num">0</div>
+          <div class="record-tag" data-ru="Loss" data-az="Məğlubiyyət">Loss</div>
+        </div>
+      </div>
+      <div class="win-marks">
+        <div class="mark">W</div>
+        <div class="mark">W</div>
+        <div class="mark pending">?</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tape">
+    <div class="section-title"><span data-ru="Досье" data-az="Məlumat kartı">Досье</span> <span>/ Tale of the Tape</span></div>
+    <div class="stat-row">
+      <div class="stat-key" data-ru="Возраст" data-az="Yaş">Возраст</div>
+      <div class="stat-val" data-ru="12 лет" data-az="12 yaş">12 лет</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-key" data-ru="Дата рождения" data-az="Doğum tarixi">Дата рождения</div>
+      <div class="stat-val" data-ru="12 октября 2013 года" data-az="12 oktyabr 2013-cü il">12 октября 2013 года</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-key" data-ru="Клуб / зал" data-az="Klub / zal">Клуб / зал</div>
+      <div class="stat-val" data-ru="Bull Fight Club MMA<small>Разино</small>" data-az="Bull Fight Club MMA<small>Razino</small>">Bull Fight Club MMA<small>Разино</small></div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-key" data-ru="Вес" data-az="Çəki">Вес</div>
+      <div class="stat-val" data-ru="34 кг" data-az="34 kq">34 кг</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-key" data-ru="Текущий рекорд" data-az="Cari rekord">Текущий рекорд</div>
+      <div class="stat-val" data-ru="2 победы — 0 поражений<small>100% побед</small>" data-az="2 qələbə — 0 məğlubiyyət<small>100% qələbə</small>">2 победы — 0 поражений<small>100% побед</small></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot-line">Bull Fight Club <b>MMA</b> · <span data-ru="Разино" data-az="Razino">Разино</span></div>
+    <div class="foot-line"><span data-ru="Профиль бойца" data-az="Döyüşçü profili">Профиль бойца</span> — <span data-ru="Амир Мамедгасанов" data-az="Əmir Məmmədhəsənov">Амир Мамедгасанов</span></div>
+  </footer>
+
+</div>
+
+<script>
+  const btns = document.querySelectorAll('.lang-btn');
+  const nodes = document.querySelectorAll('[data-ru]');
+
+  function setLang(lang){
+    nodes.forEach(el => { el.innerHTML = el.getAttribute('data-' + lang); });
+    btns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    document.documentElement.lang = lang;
+  }
+
+  btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+</script>
+
+</body>
 </html>
